@@ -44,7 +44,7 @@ Make your bundle happy:
 
 Now run the generator:
 
-    rails g spree_drop_shipping:install
+    rails generate spree_drop_shipping:install
 
 Then migrate your database:
 
@@ -52,7 +52,7 @@ Then migrate your database:
 
 And reboot your server:
 
-    rails s
+    rails server
 
 You should be up and running now!
 
@@ -134,7 +134,7 @@ You can easily use the test/dummy app as a demo of spree_drop_shipping. Just `cd
     bundle exec dummier
     cd test/dummy
     rake db:migrate db:seed db:sample
-    rails s
+    rails server
 
 
 You can also enable the `after_migrate` [dummier](https://github.com/citrus/dummier) hook by renaming `after_migrate.rb.sample` to `after_migrate.rb` in `lib/dummy_hooks` then re-run `bundle exec dummier`. In other words, just do this:
@@ -143,7 +143,7 @@ You can also enable the `after_migrate` [dummier](https://github.com/citrus/dumm
     mv lib/dummy_hooks/after_migrate.rb.sample lib/dummy_hooks/after_migrate.rb
     bundle exec dummier
     cd test/dummy
-    rails s
+    rails server
 
 
 Contributors
