@@ -58,8 +58,6 @@ def save_and_continue
   click_button "Save and Continue"
 end
 
-
-
 Given /^I'm placing an order for the first product$/ do
   visit_first_product
   click_checkout
@@ -137,5 +135,3 @@ end
 Then /^I should be viewing the last drop ship order$/ do
   assert_equal drop_ship_order_path(DropShipOrder.last), current_path
 end
-
-

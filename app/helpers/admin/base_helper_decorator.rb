@@ -1,5 +1,4 @@
 Admin::BaseHelper.class_eval do
-
   def error_message_on(object, method, options = {})
     object = convert_to_model(object).to_s.gsub(/[^a-z0-9]/, '_')
     obj = object.respond_to?(:errors) ? object : instance_variable_get("@#{object}")
@@ -11,5 +10,4 @@ Admin::BaseHelper.class_eval do
       ''
     end
   end
-  
 end

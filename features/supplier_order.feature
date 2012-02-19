@@ -1,14 +1,14 @@
 Feature: Supplier Drop ship orders
-    
+
   In order to fulfill the vendor's orders
   As a supplier
   I want to receive orders for products that drop ship
-  
+
   Background:
     Given I have some products
       And I have a shipping method
       And I have a bogus payment method
-  
+
   Scenario: An order is placed for a drop shippable product
     Given I have an existing supplier named "Some Big Store"
       And supplier named "Some Big Store" is linked to the first product
@@ -18,7 +18,7 @@ Feature: Supplier Drop ship orders
       And I should see "Your order has been processed successfully" in the flash notice
     Then supplier named "Some Big Store" should have 1 order for the first product
       # And "Some Big Store" should receive an order email
-  
+
   Scenario: Supplier receives drop ship order
     Given I have an existing supplier named "Some Big Store"
       And supplier named "Some Big Store" has been sent a drop ship order for the first product
@@ -43,4 +43,3 @@ Feature: Supplier Drop ship orders
     When I press "Process and finalize order"
     Then I should be viewing the last drop ship order
       And I should see "Thank you for your shipment!" in the flash notice
-      

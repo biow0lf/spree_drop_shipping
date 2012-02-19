@@ -23,11 +23,10 @@
     <dd><%= link_to @supplier.orders.count, admin_supplier_orders_path(@supplier) %></dd>
   <dt>User ID</dt>
     <dd><%= link_to @supplier.user.id, admin_user_path(@supplier.user) %></dd>
-    
 </dl>
 
 <hr class="clear" />
-  
+
 <p>
   <%= link_to_edit @supplier %> &nbsp;
   <%= link_to t('back'), collection_url %>

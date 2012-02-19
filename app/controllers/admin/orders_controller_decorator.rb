@@ -1,13 +1,11 @@
-Admin::OrdersController.class_eval do 
-  
+Admin::OrdersController.class_eval do
   def drop_ship_approve
     @order = load_order
     if @order.approve_drop_ship_orders
       flash[:notice] = I18n.t('admin.drop_ship_orders.orders_sent')
-    else    
+    else
       flash[:error] = I18n.t('admin.drop_ship_orders.orders_not_sent')
-    end    
+    end
     redirect_to admin_order_path(@order)
   end
-  
 end

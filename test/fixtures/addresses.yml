@@ -9,7 +9,6 @@ billing_address:
   country_id: 214
   phone: 555-555-1027
 
-
 shipping_address:
   firstname: Boxy
   lastname: Shipperman
@@ -20,4 +19,3 @@ shipping_address:
   zipcode: 16804
   country_id: 214
   phone: 555-555-5555
-

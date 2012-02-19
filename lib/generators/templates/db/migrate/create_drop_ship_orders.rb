@@ -1,5 +1,4 @@
 class CreateDropShipOrders < ActiveRecord::Migration
-
   def self.up
     create_table :drop_ship_orders do |t|
       t.references :order
@@ -12,7 +11,7 @@ class CreateDropShipOrders < ActiveRecord::Migration
       t.datetime   :sent_at
       t.datetime   :confirmed_at
       t.datetime   :shipped_at
-      t.string     :state, :default => "active"          
+      t.string     :state, :default => "active"
       t.timestamps
     end
   end
@@ -20,5 +19,4 @@ class CreateDropShipOrders < ActiveRecord::Migration
   def self.down
     drop_table :drop_ship_orders
   end
-  
 end

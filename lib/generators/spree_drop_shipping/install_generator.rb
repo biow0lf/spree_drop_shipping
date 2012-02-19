@@ -1,8 +1,7 @@
 module SpreeDropShipping
   module Generators
     class InstallGenerator < Rails::Generators::Base
-      
-      include Rails::Generators::Migration      
+      include Rails::Generators::Migration
 
       def self.count!
         @count ||= 0
@@ -17,16 +16,14 @@ module SpreeDropShipping
           "%.3d" % (current_migration_number(dirname) + 1)
         end
       end
-      
+
       desc "Installs required migrations for spree_essentials"
       source_root File.expand_path("../../templates", __FILE__)
-      
+
       def copy_migrations
-        
         %w(create_suppliers create_supplier_products create_drop_ship_orders create_drop_ship_line_items add_supplier_to_line_items).each do |m|      
           migration_template "db/migrate/#{m}.rb", "db/migrate/#{m}.rb"
         end
-        
       end
 
     end

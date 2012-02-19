@@ -1,5 +1,4 @@
 class AbilityDecorator
-
   include CanCan::Ability
 
   def initialize(user)

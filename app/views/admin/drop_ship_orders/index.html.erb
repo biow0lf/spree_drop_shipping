@@ -5,16 +5,16 @@
 
 <table class="index">
   <thead>
-	<tr>
-    	<th><%= sort_link @search, :id,  t('order.id') %></th>
-    	<th><%= sort_link @search, :supplier_name,  t('order.supplier.name') %></th>
-    	<th><%= sort_link @search, :order_number,  t('order.number') %></th>
-    	<th><%= sort_link @search, :total,  t('order.total') %></th>
-    	<th><%= sort_link @search, :sent_at,  t('order.sent_at') %></th>
-    	<th><%= sort_link @search, :confirmed_at,  t('order.confirmed_at') %></th>
-    	<th><%= sort_link @search, :shipped_at,  t('order.shipped_at') %></th>
-    	<th><%= sort_link @search, :status,  t('order.status') %></th>
-	</tr>
+    <tr>
+      <th><%= sort_link @search, :id,  t('order.id') %></th>
+      <th><%= sort_link @search, :supplier_name,  t('order.supplier.name') %></th>
+      <th><%= sort_link @search, :order_number,  t('order.number') %></th>
+      <th><%= sort_link @search, :total,  t('order.total') %></th>
+      <th><%= sort_link @search, :sent_at,  t('order.sent_at') %></th>
+      <th><%= sort_link @search, :confirmed_at,  t('order.confirmed_at') %></th>
+      <th><%= sort_link @search, :shipped_at,  t('order.shipped_at') %></th>
+      <th><%= sort_link @search, :status,  t('order.status') %></th>
+    </tr>
   </thead>
   <tbody>
     <%- @collection.each do |dso|%>

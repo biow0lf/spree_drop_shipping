@@ -1,5 +1,4 @@
 class CreateSupplierProducts < ActiveRecord::Migration
-
   def self.up
     create_table :supplier_products do |t|
       t.references :supplier
@@ -10,5 +9,4 @@ class CreateSupplierProducts < ActiveRecord::Migration
   def self.down
     drop_table :supplier_products
   end
-  
 end

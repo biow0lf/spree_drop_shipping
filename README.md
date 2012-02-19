@@ -11,9 +11,9 @@ Spree Drop Shipping
 
 ---
 
-So the main goal with spree_drop_shipping is to link products to suppliers and forward orders to appropriate suppliers. 
+So the main goal with spree_drop_shipping is to link products to suppliers and forward orders to appropriate suppliers.
 
-In more detail, once an order is placed for a product that drop ships a drop ship order is created for the product's supplier. This drop ship order is sent to the supplier via Email. The supplier then follows a link to the order within the email where they are prompted to confirm the order. 
+In more detail, once an order is placed for a product that drop ships a drop ship order is created for the product's supplier. This drop ship order is sent to the supplier via Email. The supplier then follows a link to the order within the email where they are prompted to confirm the order.
 
 After the supplier has confirmed an order and is ready to ship, they can log into the site and update the drop ship order with a shipping method, confirmation number and tracking number. Once they 'process & finalize' the order, the customer is notified with the shipment details.
 
@@ -41,19 +41,19 @@ Add the following to your Gemfile:
 Make your bundle happy:
 
     bundle install
-    
+
 Now run the generator:
 
     rails g spree_drop_shipping:install
-    
+
 Then migrate your database:
 
     rake db:migrate
-    
+
 And reboot your server:
-  
+
     rails s
-    
+
 You should be up and running now!
 
 
@@ -95,17 +95,17 @@ Then, in another window, run:
 If you want to run shoulda tests, start spork with:
 
     bundle exec spork TestUnit
-    #or 
+    #or
     bundle exec spork t
-        
+
 In another window, run all tests:
 
     testdrb test/**/*_test.rb
-    
+
 Or just a specific test:
 
     testdrb test/unit/supplier_test.rb
-  
+
 
 ### No Spork
 
@@ -113,13 +113,13 @@ If you don't want to spork, just use rake:
 
     # cucumber/capybara
     rake cucumber
-    
+
     # test/unit
     rake test
-    
+
     # both
-    rake 
-  
+    rake
+
 POW!
 
 
@@ -132,11 +132,11 @@ You can easily use the test/dummy app as a demo of spree_drop_shipping. Just `cd
     cd spree_drop_shipping
     bundle install
     bundle exec dummier
-    cd test/dummy  
+    cd test/dummy
     rake db:migrate db:seed db:sample
     rails s
-    
-    
+
+
 You can also enable the `after_migrate` [dummier](https://github.com/citrus/dummier) hook by renaming `after_migrate.rb.sample` to `after_migrate.rb` in `lib/dummy_hooks` then re-run `bundle exec dummier`. In other words, just do this:
 
     cd spree_drop_shipping
@@ -144,12 +144,12 @@ You can also enable the `after_migrate` [dummier](https://github.com/citrus/dumm
     bundle exec dummier
     cd test/dummy
     rails s
-    
+
 
 Contributors
 ------------
 
-So far it's just me; Spencer Steffen. 
+So far it's just me; Spencer Steffen.
 
 If you'd like to help out feel free to fork and send me pull requests!
 

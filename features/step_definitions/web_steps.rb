@@ -8,14 +8,12 @@ include HelperMethods
 
 def get_parent(parent)
   case parent.sub(/^the\s/, '')
-    when "main menu";     "#admin-menu"    
+    when "main menu";     "#admin-menu"
     when "flash notice";  ".flash"
     when "popup message"; "#popup_message"
     when "index table";   "table.index"
   end
 end
-
-
 
 # hack hack hack!
 # some weird bug for cuke/capy/selenium and ajax
@@ -24,16 +22,14 @@ Then /^I should but don't see "([^"]*)"$/ do |text|
   puts "Let's just pretend you saw #{text.inspect} where you wanted to...\n\n"
 end
 
-
-
 #========================================================================
 # Givens
 
 Given /^I'm on the ((?!page).*) page$/ do |path|
   path = "#{path.downcase.gsub(/\s/, '_')}_path".to_sym
-  begin 
+  begin
     visit send(path)
-  rescue 
+  rescue
     puts "#{path} could not be found!"
   end
 end
@@ -46,13 +42,12 @@ Given /^I'm on the ((?!page).*) page for (.*)$/ do |path, id|
       id = DropShipOrder.last
   end
   path = "#{path.downcase.gsub(/\s/, '_')}_path".to_sym
-  begin 
+  begin
     visit send(path, id)
-  rescue 
+  rescue
     puts "#{path} could not be found!"
   end
 end
-
 
 #========================================================================
 # Actions
@@ -83,11 +78,6 @@ When /^I confirm the popup message$/ do
   find_by_id("popup_ok").click
 end
 
-
-
-
-
-
 #========================================================================
 # Assertions
 
@@ -111,17 +101,16 @@ Then /^I should not see "([^"]*)" in (.*)$/ do |text, parent|
   end
 end
 
-Then /^"([^"]*)" should equal "([^"]*)"$/ do |field, value| 
-  assert_equal value, find_field(field).value 
-end 
+Then /^"([^"]*)" should equal "([^"]*)"$/ do |field, value|
+  assert_equal value, find_field(field).value
+end
 
-Then /^"([^"]*)" should have "([^"]*)" selected$/ do |field, value| 
+Then /^"([^"]*)" should have "([^"]*)" selected$/ do |field, value|
   field = find_field(field)
   has_match = field.text =~ /#{value}/
   has_match = field.value =~ /#{value}/ unless has_match
   assert has_match
-end 
-
+end
 
 #========================================================================
 # Forms
@@ -139,6 +128,3 @@ end
 When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
   select(value, :from => field)
 end
-
-
-

@@ -1,8 +1,7 @@
 Admin::ProductsController.class_eval do
-
-  before_filter :get_suppliers, :only => [ :edit, :update ]
+  before_filter :get_suppliers, :only => [:edit, :update]
   update.before :attach_supplier
-  
+
   def attach_supplier
     if params[:supplier_id].present?
       @supplier = Supplier.find(params[:supplier_id]) rescue nil
@@ -15,9 +14,8 @@ Admin::ProductsController.class_eval do
       @product.supplier_product.destroy
     end
   end
-  
-  def get_suppliers
-    @supplier_options = Supplier.order(:name).all.map{|s| [ s.name, s.id ] }
-  end
 
+  def get_suppliers
+    @supplier_options = Supplier.order(:name).all.map{ |s| [s.name, s.id] }
+  end
 end

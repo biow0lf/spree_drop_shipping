@@ -5,7 +5,7 @@ ror_tote_v:
   cost_price: 13.00
   is_master: true
   count_on_hand: 10
-  
+
 ds_ror_bag_v:
   product: ds_ror_bag
   sku: ROR-00012

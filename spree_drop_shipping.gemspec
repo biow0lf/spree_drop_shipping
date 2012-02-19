@@ -17,13 +17,13 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  
+
   s.require_paths = ["lib"]
-  
+
   # Spree
   s.add_dependency('spree_core', '~> 0.60.4')
   s.add_dependency('spree_auth', '~> 0.60.4')
-  
+
   # Development
   s.add_development_dependency('minitest',         '>= 2.1.0')
   s.add_development_dependency('spree_sample',     '~> 0.60.4')
@@ -32,9 +32,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency('spork',            '>= 0.9.0.rc9')
   s.add_development_dependency('spork-testunit',   '>= 0.0.5')
   s.add_development_dependency('factory_girl',     '>= 2.0.4')
-	s.add_development_dependency('cucumber-rails',   '>= 1.0.2')
-	s.add_development_dependency('database_cleaner', '>= 0.6.7')
+  s.add_development_dependency('cucumber-rails',   '>= 1.0.2')
+  s.add_development_dependency('database_cleaner', '>= 0.6.7')
   s.add_development_dependency('sqlite3',          '>= 1.3.4')
   s.add_development_dependency('turn',             '>= 0.8.2')
-
 end

@@ -1,9 +1,6 @@
 class DropShipOrdersController < Spree::BaseController
-  
   before_filter :check_authorization
-  
-  #before_filter :get_dso
-  
+
   def show
     redirect_to edit_drop_ship_order_path(@dso) unless @dso.complete?
   end
@@ -18,9 +15,8 @@ class DropShipOrdersController < Spree::BaseController
     end
     redirect_to @dso if @dso.complete?
   end
-  
+
   def update
-    
     if @dso.sent?
       success = @dso.confirm
       url = edit_drop_ship_order_path(@dso)
@@ -29,27 +25,24 @@ class DropShipOrdersController < Spree::BaseController
       url = drop_ship_order_path(@dso)
       flash[:notice] = I18n.t('supplier_orders.flash.shipped') if success
     end
-    
+
     if success
       redirect_to url
     else
       flash[:error] = I18n.t("supplier_orders.flash.#{@dso.confirmed? ? 'confirmation_failure' : 'finalize_failure'}")
       render :edit
     end
-    
   end
-   
-  private
-  
-    def get_dso    
-      @dso = DropShipOrder.includes(:line_items, :order => [ :ship_address ]).find(params[:id])
-      @address = @dso.order.ship_address
-    end
-  
-    def check_authorization
-      get_dso
-      authorize!(:show, @dso)
-    end
-  
-      
+
+private
+
+  def get_dso
+    @dso = DropShipOrder.includes(:line_items, :order => [:ship_address]).find(params[:id])
+    @address = @dso.order.ship_address
+  end
+
+  def check_authorization
+    get_dso
+    authorize!(:show, @dso)
+  end
 end
