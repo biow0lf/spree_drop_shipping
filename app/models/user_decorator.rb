@@ -1,4 +1,4 @@
-User.class_eval do
+Spree::User.class_eval do
   has_one :supplier
 
   def has_supplier?

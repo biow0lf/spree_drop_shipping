@@ -1,4 +1,4 @@
-Product.class_eval do
+Spree::Product.class_eval do
   has_one :supplier_product, :dependent => :destroy
   has_one :supplier, :through => :supplier_product
 
